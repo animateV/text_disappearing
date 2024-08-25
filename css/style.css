@@ -1,0 +1,91 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: var(--container-min-width);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000;
+}
+
+
+/* Переменные */
+:root {
+
+  /* Контейнер */
+  --container-max-width: 1280px;
+  --container-min-width: 320px;
+
+  /* Цвета */
+
+
+  /* Время */
+  --transition-timing-function: .3s;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 15px;
+  min-height: 100vh;
+}
+
+.title-video {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.title {
+  position: relative;
+  z-index: 1;
+  margin: 20px 0 0;
+  font-size: 4em;
+  font-weight: 900;
+  color: #ffffff;
+  user-select: none;
+  overflow: hidden;
+}
+
+.title__descorate {
+  color: #ff022c;
+}
+
+.title::before {
+  position: absolute;
+  content: '';
+  left: 120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, #000000 5%, #000000 100%);
+  animation: animate 5.5s linear forwards;
+  animation-delay: 2s;
+}
+
+@keyframes animate {
+
+  0% {
+    left: 110%;
+  }
+
+  100% {
+    left: -20%;
+  }
+
+}
